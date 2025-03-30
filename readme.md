@@ -1,0 +1,1 @@
+In this repository, all the practice related the learning of typescript will be placed.
