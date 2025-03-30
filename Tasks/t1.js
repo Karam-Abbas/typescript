@@ -1,9 +1,14 @@
 "use strict";
-var a = 123;
-console.log(a);
-var codes;
-(function (codes) {
-    codes[codes["NotFound"] = 404] = "NotFound";
-    codes[codes["Error"] = 500] = "Error";
-})(codes || (codes = {}));
-console.log(codes.NotFound);
+// var a = 123;
+// console.log(a);
+// enum codes{
+//     NotFound = 404,
+//     Error = 500
+//     }
+// console.log(codes.NotFound);
+let a;
+// a ="karam"
+// a.toUppercase() // this will throw error until you first check the type of this
+if (typeof (a) === "string") {
+    a.toUpperCase(); // Now this will work perfectly fine.
+}
