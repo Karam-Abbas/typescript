@@ -78,7 +78,8 @@ console.log(obj.prop); // undefined
 
 ```
 
-## Never => This type is used to indicate that this function will not let the code ahead to execute like an indicating an infinite loop or something like that. 
+## Never 
+This type is used to indicate that this function will not let the code ahead to execute like an indicating an infinite loop or something like that. 
 
 ```typescript
 function abcd():never{
@@ -88,5 +89,112 @@ abcd();
 console.log("anything"); // the color of it will be faded indicating abcd will never stop and this line will never execute.
 ```
 
+## Type Inference
+Without mentioning type when typescript automatically inferences the type of the variable, this phenomenon is called as the type inference.
+```typescript
+let a = 12; // hover over the a let a:number will be showing up 
+// typescript automatically inferred the type of the variable.
+```
 
+## Type Annotations
+Explicitly mentioning the type of the variable is simply called as the type annotation.
+We can also combiner properties by using the OR operator.(number|string)
+
+```typescript
+let b:number = 12; 
+```
+
+We can even annotate the type of the variables and the return type of the function altogether. Like this 
+```typescript
+function foo(a:number,b:string):void 
+{
+    // type of param 1 is number
+    // type of param 2 is string
+    // as the return type is void nothing will be returned.
+}
+```
+
+---
+
+# Interfaces and Type Aliases
+
+### 1. Interfaces
+Interfaces are like defining classes in the javascript. Which defines the shape of a variable.
+```typescript
+interface User{
+    id: number;
+    name: string;
+    age: number;
+    email: string;
+    gender?: string; // optional
+}
+
+const abcd = (obj:User):void =>{
+console.log(obj);
+}
+// Both below will work just fine.
+abcd({ id:12, name: "Karam", age:21, email: "k@m.com"});
+abcd({ id:12, name: "Karam", age:21, email: "k@m.com",gender:"M"});
+```
+- Extended Interfaces
+```typescript
+
+interface User{
+    id:String,
+    name:string
+}
+
+interface Admin extends User{
+    admin:boolean;
+}
+
+function abcd(obj:Admin):void{
+    console.log(obj);
+}
+
+abcd({ id: "12", name: "Karam", admin: true}); 
+// user and admin are merged together 
+// and admin has all the variable of User 
+// plus its own variables.
+```
+- Empty extended interface
+```typescript
+
+interface User{
+    id:String,
+    name:string
+}
+
+interface Admin extends User{
+}
+
+function abcd(obj:Admin):void{
+    console.log(obj);
+}
+
+abcd({ id: "12", name: "Karam"}); 
+// If no value will be placed in the 
+// admin then it will have only the values of the user.
+```
+- Interfaces of the same name.
+```typescript
+
+interface User{
+    name:string;
+}
+
+interface User{
+    number:number;
+}
+const person: User = { name: "Karam", number: 21};
+function abcd(obj:User):void{
+    console.log(obj);
+}
+// If there are or more interfaces of the same
+// name then there properties are merged together
+// and one interface is created containing all the 
+// values of both interfaces.,
+```
+
+### 2. Type Aliases
 

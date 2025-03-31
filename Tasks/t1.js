@@ -6,9 +6,11 @@
 //     Error = 500
 //     }
 // console.log(codes.NotFound);
-let a;
-// a ="karam"
-// a.toUppercase() // this will throw error until you first check the type of this
-if (typeof (a) === "string") {
-    a.toUpperCase(); // Now this will work perfectly fine.
+const person = { name: "Karam", number: 21 };
+function abcd(obj) {
+    console.log(obj);
 }
+// If there are or more interfaces of the same
+// name then there properties are merged together
+// and one interface is created containing all the 
+// values of both interfaces.
