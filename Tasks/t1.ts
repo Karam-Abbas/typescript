@@ -99,11 +99,11 @@
 // let c : a | b ;
 
 
-type Person = { name: string };
-type Employee = { employeeId: number };
-type EmployeePerson = Person & Employee;
-let a : Person & Employee ={name: "John", employeeId:122};
-const emp: EmployeePerson = {
-  name: "John",
-  employeeId: 1234
-}; // ✅ Valid
+// type Person = { name: string };
+// type Employee = { employeeId: number };
+// type EmployeePerson = Person & Employee;
+// let a : Person & Employee ={name: "John", employeeId:122};
+// const emp: EmployeePerson = {
+//   name: "John",
+//   employeeId: 1234
+// }; // ✅ Valid
