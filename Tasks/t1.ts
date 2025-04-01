@@ -61,18 +61,49 @@
 
 // abcd({ id: "12", name: "Karam"}); // If no value will be placed in the admin then it will have only the values of the user.
 
-interface User{
-    name:string;
-}
+// interface User{
+//     name:string;
+// }
 
-interface User{
-    number:number;
-}
-const person: User = { name: "Karam", number: 21};
-function abcd(obj:User):void{
-    console.log(obj);
-}
+// interface User{
+//     number:number;
+// }
+// const person= { name: "Karam", number: 21};
+// function abcd(obj:User):void{
+//     console.log(obj);
+// }
+// abcd(person);
+
 // If there are or more interfaces of the same
 // name then there properties are merged together
 // and one interface is created containing all the 
 // values of both interfaces.
+
+// type a = string|boolean;
+
+// function abcd(obj:a):void{
+//     console.log(obj);
+// }
+
+// abcd(12);// warning
+// abcd("hello"); // fine
+
+// type a ={
+//     name:string
+// }
+
+// type b ={
+//     age:number
+// }
+
+// let c : a | b ;
+
+
+type Person = { name: string };
+type Employee = { employeeId: number };
+type EmployeePerson = Person & Employee;
+let a : Person & Employee ={name: "John", employeeId:122};
+const emp: EmployeePerson = {
+  name: "John",
+  employeeId: 1234
+}; // ✅ Valid

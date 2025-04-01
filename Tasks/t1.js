@@ -6,11 +6,8 @@
 //     Error = 500
 //     }
 // console.log(codes.NotFound);
-const person = { name: "Karam", number: 21 };
-function abcd(obj) {
-    console.log(obj);
-}
-// If there are or more interfaces of the same
-// name then there properties are merged together
-// and one interface is created containing all the 
-// values of both interfaces.
+let a = { name: "John", employeeId: 122 };
+const emp = {
+    name: "John",
+    employeeId: 1234
+}; // ✅ Valid

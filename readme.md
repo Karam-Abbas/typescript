@@ -197,4 +197,50 @@ function abcd(obj:User):void{
 ```
 
 ### 2. Type Aliases
+Instead of concatenating different types we use "type" keyword and simplify the code, like this.
+
+```typescript
+
+type a = string|boolean;
+
+function abcd(obj:a):void{
+    console.log(obj);
+}
+
+abcd(12);// warning
+abcd("hello"); // fine
+```
+### Union and Intersection Types
+- Union 
+  when the variable can be of one type or the other there is a choice between.
+  works for both primitive types and non-primitive types
+```typescript
+//primitive
+let a = string | boolean; // simple union (OR)
+// non-primitive
+type a ={
+    name:string
+}
+type b ={
+    age:number
+}
+let c : a | b ;   // complex union but works.
+```
+- Intersection
+Intersection doesn't works with primitive types because no value can be String and Number at the same type.
+```typescript
+let a = string & boolean; ❌
+```
+ It is used to merge 2 different custom types into one like this:
+ ```typescript
+type Person = { name: string };
+type Employee = { employeeId: number };
+type EmployeePerson = Person & Employee;
+const emp: EmployeePerson = {
+  name: "John",
+  employeeId: 1234
+}; // ✅ Valid
+
+ ```
+
 
