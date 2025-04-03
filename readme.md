@@ -243,6 +243,5 @@ const emp: EmployeePerson = {
 
  ```
 
- So basically i have done quite some work today.
 
 
