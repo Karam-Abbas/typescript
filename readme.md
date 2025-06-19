@@ -240,8 +240,9 @@ const emp: EmployeePerson = {
   name: "John",
   employeeId: 1234
 }; // ✅ Valid
-
  ```
+# Class and Objects
+have to add this rn but not sure when will i be able to do that
 
 
 
